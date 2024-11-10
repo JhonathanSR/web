@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3CosmosEvents/site</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+    <style>
+         h1 {
+            text-align: center;
+            font-family: Pinyon Script, cursive;
+            font-size: 14xp;
+            color: #a2121c;
+        }
+        
+        body {
+            font-family: "Roboto", sans-serif;
+        }
+
+       header {
+            background-color: #f0eded; 
+            padding: 10px;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        header nav a {
+            color: #9A0808; 
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        header nav a:hover {
+            background-color: #e4b8b8; 
+        }
+
+        
+        section {
+            padding: 10px;
+        }
+         /*Alinear la imagen al centro*/
+         .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        .logo img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        footer {
+            background-color: #9A0808; 
+            color: white;
+            text-align: right;
+            padding: 10px;
+        }
+
+        
+        footer nav {
+            display: flex;
+            justify-content: center;
+        }
+
+        footer nav a {
+            color: white; 
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        footer nav a:hover {
+            color: #e4b8b8; 
+        }
+
+       
+        .border-top {
+            border-top: 5px solid #9A0808;
+            margin-bottom: 20px;
+        }
+
+        .border-bottom {
+            border-bottom: 5px solid #9A0808;
+            margin-top: 20px;
+            
+        }
+        /* Contenedor del slider */
+        .slider-container {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        
+        .slider-image {
+            width: 100%;
+            display: none; 
+            transition: opacity 1s ease-in-out; /* Efecto de desvanecido */
+        }
+
+       
+        .slider-image.active {
+            display: block;
+            opacity: 1;
+        }
+
+        
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .slider-nav button {
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .slider-nav button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }   
+    </style>
+</head>
+<body>
+    
+   
+    <div class="border-top"></div>
+
+    <header>
+        <a href="#" class="logo"><img src="Imagenes/logo CosmosEvents.png" alt="Logo CosmosEvents"></a>
+        <h1>Bienvenidos a CosmosEvents</h1>
+        <nav>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="eventos.html">Eventos</a>
+            <a href="reserva_evento.html">Reserva Evento</a>
+            <a href="pagar.html">Pagar</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </header>
+    <div class="slider-container">
+        <!-- Imágenes del slider -->
+        <img src="Imagenes/princ2.jpg" alt="Principal 1" class="slider-image active">
+        <img src="Imagenes/princ.jpg" alt="Principal 2" class="slider-image">
+        <img src="Imagenes/matrimonio2.jpeg" alt="Principal 3" class="slider-image">
+        <img src="Imagenes/gradosfiestas.png" alt="Principal 4" class="slider-image">
+    
+        <!-- Botones de navegación -->
+        <div class="slider-nav">
+            <button onclick="changeSlide(-1)">&#10094; Anterior</button>
+            <button onclick="changeSlide(1)">Siguiente &#10095;</button>
+        </div>
+    </div>
+    
+    <script>
+        let slideIndex = 0;
+        const slides = document.getElementsByClassName("slider-image");
+    
+        function changeSlide(n) {
+            slides[slideIndex].classList.remove("active"); // Quita la clase activa de la imagen actual
+            slideIndex = (slideIndex + n + slides.length) % slides.length; // Cambia el índice de la imagen
+            slides[slideIndex].classList.add("active"); // Añade la clase activa a la nueva imagen
+        }
+    </script>
+       
+    <section>
+        <h2>Bienvenido a CosmosEvents</h2>
+        <p>Ofrecemos los mejores servicios de organización de eventos. Explore nuestras opciones y reserve su evento ahora.</p>
+    </section>
+
+    <footer>
+        <nav>
+            <a href="nosotros.html">Acerca de</a>
+            <a href="eventos.html">Cotizar</a>
+            <a href="pagar.html">Pagos</a>
+            <a href="contacto.html">Contáctenos</a>
+        </nav>
+    </footer>
+
+    <!-- Borde inferior -->
+    <div class="border-bottom"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+</body>
+</html>

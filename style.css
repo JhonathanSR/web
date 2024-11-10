@@ -1,0 +1,19 @@
+/*Style the footer */
+body{
+    font-family: Roboto, sans-serif;
+}
+.header-a {
+    color: #9A0808;
+    text-decoration: none;
+    padding: 10px 10px;
+}
+footer {
+    color: white;
+    background-color: #9A0808;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    padding: 10px;
+    text-align: center;
+}

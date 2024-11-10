@@ -1,0 +1,73 @@
+body{
+    font-family: Roboto, sans-serif;
+}
+header {
+    
+    background-color: #f0f0f0; /* Fondo gris claro */
+    padding: 20px;
+    text-align: center;
+}
+
+.header-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+
+.header-nav li {
+    margin: 0 15px;
+}
+
+
+.header-nav a {
+    color: #9A0808; 
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+/* Efecto hover para los enlaces del header */
+.header-nav a:hover {
+    color: #f0efed; /* Cambia de color al pasar el mouse */
+}
+
+/* Estilos para el footer */
+footer {
+    background-color: #9A0808; /* Fondo del footer */
+    padding: 20px;
+    text-align: center;
+}
+
+/* Estilos para la lista de navegación en el footer */
+.footer-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+/* Estilos para los elementos de la lista en el footer */
+.footer-nav li {
+    margin: 0 15px;
+}
+
+
+.footer-nav a {
+    color: white; /* Color del texto */
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+/* Efecto hover para los enlaces del footer */
+.footer-nav a:hover {
+    color: #ff9800; /* Cambia de color al pasar el mouse */
+}
+
+
