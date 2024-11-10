@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reserva_evento</title>
+    <style>
+         h1 {
+            text-align: center;
+            font-family: Pinyon Script, cursive;
+            font-size: 14xp;
+            color: #a2121c;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .product {
+            display: inline-block;
+            width: 200px;
+            margin: 10px;
+            padding: 15px;
+            border: 1px solid #9A0808;
+            text-align: center;
+        }
+        .product img {
+            width: 100px;
+            height: 100px;
+        }
+        .product h3 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .product p {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+        .product button {
+            margin: 5px;
+        }
+        #total {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+        /*Alinear la imagen al centro*/
+        .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        .logo img {
+            max-width: 100%;
+            height: auto;
+        }
+        footer {
+            background-color: #a2121c; 
+            color: white;
+            text-align: right;
+            padding: 10px;
+        }
+        footer nav {
+            display: flex;
+            justify-content: center;
+        }
+
+        footer nav a {
+            color: white; 
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        footer nav a:hover {
+            color: #e4b8b8; 
+        }
+    </style>
+</head>
+<body>
+
+    
+    <h1>Cotización Fiestas</h1>
+    
+    <a href="#" class="logo"><img src="Imagenes/logo CosmosEvents.png" alt="Logo CosmosEvents"></a>
+       
+    <header>
+    <div class="product" data-price="12000">
+        <img src="Imagenes/ponque.jpeg" alt="Producto 1">
+        <h3>Ponque</h3>
+        <p>Precio: $12000</p>
+        
+        <label for="tipoProducto1">Seleccione el tipo de producto</label>
+        <select id="tipoProducto1">
+            <option value="Masa Blanca">Masa Blanca</option>
+            <option value="Masa Negra">Masa Negra</option>
+            <option value="Tres Leches">Tres Leches</option>
+        </select>
+        <br>
+            <label for="cantidad1">Cantidad:</label>
+            <input type="number" id="cantidad1" value="1" min="1">
+            <button onclick="addToCart('Ponque', 12000, 'tipoProducto1', 'cantidad1')">Agregar</button>
+            <button onclick="removeFromCart(12000, 'cantidad1')">Eliminar</button>
+    </div>
+
+    <div class="product" data-price="6500">
+        <img src="Imagenes/cocteles.png" alt="Producto 2">
+        <h3>Bebidas</h3>
+        <p>Precio: $6500</p>
+        <label for="tipoProducto2">Seleccione el tipo de producto</label>
+        <select id="tipoProducto2">
+            <option value="Cocteles">Cocteles con Vodka</option>
+            <option value="Cerveza">Cerveza</option>
+            <option value="Agua">Agua</option>
+        </select>
+        <br>
+            <label for="cantidad1">Cantidad:</label>
+            <input type="number" id="cantidad2" value="1" min="1">
+            <button onclick="addToCart('Bebidas', 6500, 'tipoProducto2', 'cantidad2')">Agregar</button>
+            <button onclick="removeFromCart(6500, 'cantidad2')">Eliminar</button>
+    </div>
+
+    <div class="product" data-price="80000">
+        <img src="Imagenes/personal de servicio.jpg" alt="Producto 3">
+        <h3>Personal de Servicio</h3>
+        <p>Precio: $80000</p>
+        <label for="tipoProducto3">Seleccione el personal</label>
+        <select id="tipoProducto3">
+            <option value="Mesero">Mesero</option>
+            <option value="Chef">Chef</option>
+            <option value="Auxiliar">Auxiliar de alimentos</option>
+        </select>
+        <br>
+        <label for="cantidad3">Cantidad:</label>
+        <input type="number" id="cantidad3" value="1" min="1">
+        <button onclick="addToCart('Personal de Servicio', 80000, 'tipoProducto3', 'cantidad3')">Agregar</button>
+        <button onclick="removeFromCart(80000, 'cantidad3')">Eliminar</button>
+    </div>
+
+    <div class="product" data-price="10000">
+        <img src="Imagenes/comidas.jpg" alt="Producto 4">
+        <h3>Menaje</h3>
+        <p>Precio: $10000</p>
+        <label for="tipoProducto4">Seleccione el tipo de producto</label>
+        <select id="tipoProducto4">
+            <option value="Vajilla">Vajilla cuadrada</option>
+            <option value="Cubiertos">Cubiertos</option>
+        </select> 
+        <label for="cantidad4">Cantidad:</label>
+        <input type="number" id="cantidad4" value="1" min="1">  
+        <button onclick="addToCart('Menaje', 10000, 'tipoProducto4', 'cantidad4')">Agregar</button>
+        <button onclick="removeFromCart(10000, 'cantidad4')">Eliminar</button>
+    </div>
+
+    <div class="product" data-price="15000">
+        <img src="Imagenes/princ2.jpg" alt="Producto 5">
+        <h3>Mesas y Sillas</h3>
+        <p>Precio: $15000</p>
+        <label for="tipoProducto5">Seleccione cantidad mesas y sillas</label>
+        <select id="tipoProducto5">
+            <option value="Mesa 10 puestos">Mesa cuadrada 10 puestos</option>
+            <option value="Sillas 10 puestos">Sillas 10 puestos</option>
+        </select> 
+        <label for="cantidad5">Cantidad:</label>
+        <input type="number" id="cantidad5" value="1" min="1"> 
+        <button onclick="addToCart('Mesas y Sillas', 15000, 'tipoProducto5', 'cantidad5')">Agregar</button>
+        <button onclick="removeFromCart(15000, 'cantidad5')">Eliminar</button>
+    </div>
+
+    <div class="product" data-price="160000">
+        <img src="Imagenes/sonido e Iluminacion.png" alt="Producto 6">
+        <h3>Sonido e Iluminación</h3>
+        <p>Precio: $160000</p>
+        <label for="tipoProducto6">Seleccione cantidad de servicios</label>
+        <select id="tipoProducto6">
+            <option value="DJ">Dj-música variada a escoger</option>
+            <option value="Camara de humo">Camara de humo</option>
+            <option value="Cabinas de sonido">2 Cabinas de sonido, amplificación</option>
+            <option value="Combo">Micrófono inalámbrico</option>
+            <option value="Combo2">4 Luces audio-ritmicas y laser</option>
+        </select> 
+        <label for="cantidad6">Cantidad:</label>
+        <input type="number" id="cantidad6" value="1" min="1"> 
+        <button onclick="addToCart('Sonido e Iluminación', 160000, 'tipoProducto6', 'cantidad6')">Agregar</button>
+        <button onclick="removeFromCart(160000, 'cantidad6')">Eliminar</button>
+    </div>
+
+    <div class="product" data-price="160000">
+        <img src="Imagenes/decoracion.jpg" alt="Producto 7">
+        <h3>Decoración</h3>
+        <p>Precio: $100000</p>
+        <label for="tipoProducto7">Seleccione cantidad de poductos</label>
+        <select id="tipoProducto7">
+            <option value="Arco">Arco de Bombas</option>
+            <option value="luces">luces</option>
+            <option value="Cortinas">Cortinas</option>
+            
+        </select> 
+        <label for="cantidad7">Cantidad:</label>
+        <input type="number" id="cantidad7" value="1" min="1"> 
+        <button onclick="addToCart('Decoración', 100000, 'tipoProducto7', 'cantidad7')">Agregar</button>
+        <button onclick="removeFromCart(160000, 'cantidad7')">Eliminar</button>
+    </div>
+
+    <div id="total">Total: $0</div>
+
+    <button onclick="saveAsPDF()">Guardar en PDF</button>
+    </header> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+        let total = 0;
+        let cart = [];
+
+        function addToCart(productName, price, selectId, quantityId) {
+            const selectElement = document.getElementById(selectId);
+            const selectedOption = selectElement.options[selectElement.selectedIndex].text;
+            const quantityElement = document.getElementById(quantityId);
+            const quantity = parseInt(quantityElement.value);
+            const totalPrice = price * quantity;
+            total += totalPrice;
+            cart.push({ productName, price, selectedOption, quantity });
+
+            document.getElementById("total").innerText = "Total: $" + total;
+        }
+
+        function removeFromCart(price, quantityId) {
+            const quantityElement = document.getElementById(quantityId);
+            const quantity = parseInt(quantityElement.value);
+            const totalPrice = price * quantity;
+            total -= totalPrice;
+            if (total < 0) total = 0;
+            document.getElementById("total").innerText = "Total: $" + total;
+        }
+
+         async function saveAsPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+        
+            // Cargar y agregar el logo al PDF
+            const imgData = await loadImageAsBase64('Imagenes/logo CosmosEvents.png');
+            doc.addImage(imgData, 'PNG', 10, 10, 50, 20); // Ajusta la posición y tamaño según sea necesario
+            
+            // "Resumen de la compra" debajo del logo
+            doc.setFontSize(16);
+            doc.text("Resumen de la compra", 10, 40);
+            let yPosition = 50;
+
+            cart.forEach((item, index) => {
+                doc.setFontSize(12);
+                doc.text(`${index + 1}. ${item.productName} (${item.selectedOption}) - Cantidad: ${item.quantity} - $${item.price * item.quantity}`, 10, yPosition);
+                yPosition += 10;
+            });
+
+            doc.setFontSize(14);
+            doc.text("Total: $" + total, 10, yPosition + 10);
+            doc.save("resumen-compra.pdf");
+        }
+        function loadImageAsBase64(url) {
+        return new Promise((resolve, reject) => {
+            const img = new Image();
+            img.crossOrigin = 'Anonymous';
+            img.onload = function() {
+                const canvas = document.createElement('canvas');
+                canvas.width = img.width;
+                canvas.height = img.height;
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(img, 0, 0);
+                resolve(canvas.toDataURL('image/png'));
+            };
+            img.onerror = reject;
+            img.src = url;
+        });
+    }
+    </script>
+
+<hr>
+</hr>
+<br><br>
+<a href="eventos.html">Eventos</a>
+<a href="index.html">Inicio</a>
+<footer>
+    <nav>
+        <a href="nosotros.html">Acerca de</a>
+        <a href="eventos.html">Cotizar</a>
+        <a href="pagar.html">Pagos</a>
+        <a href="contacto.html">Contáctenos</a>
+    </nav>
+</footer>
+
+</body>
+</html>

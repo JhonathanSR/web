@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Nosotros_ CosmosEvents</title>
+</head>
+<body>
+    
+    <h1 style="text-align: center;">Nosotros</h1>
+    </hr>
+    <br><br>
+    <p style="text-align: justify;">CosmosEvents ofrece servicios de calidad y satisfaccion a los usuarios que reservan nuestros servicios de sala de eventos.
+    con calidad humana, dispuesta a brindar a nuestros clientes un servicio innovador para la realización exitosa de eventos familiares,
+    sociales y empresariales en Bogotá, contamos con servicio profesional de coctelería ofreciendo productos altamente competitivos que
+    plasmen momentos especiales para que sean inolvidables y respondan satisfactoriamente a las necesidades de nuestros clientes.</p>
+    </hr>
+    <br><br>
+    <style>
+        h1 {
+            text-align: center;
+            font-family: Pinyon Script, cursive;
+            font-size: 14xp;
+            color: #a2121c;
+        }
+        body {
+            font-family: Roboto, sans-serif;
+        }
+
+       header {
+            background-color: #f0eded; 
+            padding: 10px;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        header nav a {
+            color: #9A0808; 
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        header nav a:hover {
+            background-color: #e4b8b8; 
+        }
+
+        
+        section {
+            padding: 10px;
+        }
+
+        
+        footer {
+            background-color: #9A0808; 
+            color: white;
+            text-align: right;
+            padding: 10px;
+        }
+
+        
+        footer nav {
+            display: flex;
+            justify-content: center;
+        }
+
+        footer nav a {
+            color: white; 
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        footer nav a:hover {
+            color: #e4b8b8; 
+        }
+
+       
+        .border-top {
+            border-top: 5px solid #9A0808;
+            margin-bottom: 20px;
+        }
+
+        .border-bottom {
+            border-bottom: 5px solid #9A0808;
+            margin-top: 20px;
+            
+        }
+        /* Contenedor del slider */
+        .slider-container {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        
+        .slider-image {
+            width: 100%;
+            display: none; 
+            transition: opacity 1s ease-in-out; /* Efecto de desvanecido */
+        }
+
+       
+        .slider-image.active {
+            display: block;
+            opacity: 1;
+        }
+
+        
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .slider-nav button {
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .slider-nav button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }   
+        </style>
+        <header>
+            <div class="slider-container">
+                <!-- Imágenes del slider -->
+                <img src="Imagenes/inic.jpg" alt="Principal 1" class="slider-image active">
+                <img src="Imagenes/decoracion.jpg" alt="Principal 2" class="slider-image">
+                <img src="Imagenes/catering.jpg" alt="Principal 3" class="slider-image">
+                <img src="Imagenes/mesa cofre.jpg" alt="Principal 4" class="slider-image">
+            
+                <!-- Botones de navegación -->
+                <div class="slider-nav">
+                    <button onclick="changeSlide(-1)">&#10094; Anterior</button>
+                    <button onclick="changeSlide(1)">Siguiente &#10095;</button>
+                </div>
+         
+        </header>   
+        <script>
+            let slideIndex = 0;
+            const slides = document.getElementsByClassName("slider-image");
+        
+            function changeSlide(n) {
+                slides[slideIndex].classList.remove("active"); // Quita la clase activa de la imagen actual
+                slideIndex = (slideIndex + n + slides.length) % slides.length; // Cambia el índice de la imagen
+                slides[slideIndex].classList.add("active"); // Añade la clase activa a la nueva imagen
+            }
+        </script> 
+        <hr>
+        <a href="index.html">Inicio</a>
+        
+        <footer>
+        <nav>
+            <a href="index.html">Principal</a>
+            <a href="eventos.html">Cotizar</a>
+            <a href="pagar.html">Pagos</a>
+            <a href="contacto.html">Contáctenos</a>
+        </nav>
+        </footer>
+    <script src="script.js"></script>
+
+</body>
+</html>

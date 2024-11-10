@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - CosmosEvents</title>
+    <link rel="stylesheet" href="styless.css">
+</head>
+<body>
+    <style>
+        h1 {
+            text-align: center;
+            font-family: Pinyon Script, cursive;
+            font-size: 14xp;
+            color: #a2121c;
+        }
+        body {
+            font-family: Roboto, sans-serif;
+        }
+
+       header {
+            background-color: #f0eded; 
+            padding: 10px;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        header nav a {
+            color: #9A0808; 
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        header nav a:hover {
+            background-color: #e4b8b8; 
+        }
+
+        
+        section {
+            padding: 10px;
+        }
+
+        
+        footer {
+            background-color: #9A0808; 
+            color: white;
+            text-align: right;
+            padding: 10px;
+        }
+
+        
+        footer nav {
+            display: flex;
+            justify-content: center;
+        }
+
+        footer nav a {
+            color: white; 
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        footer nav a:hover {
+            color: #e4b8b8; 
+        }
+
+       
+        .border-top {
+            border-top: 5px solid #9A0808;
+            margin-bottom: 20px;
+        }
+
+        .border-bottom {
+            border-bottom: 5px solid #9A0808;
+            margin-top: 20px;
+            
+        }
+        .event-container {
+            display:flex;
+           
+            margin: 20px;
+            gap: 20px; /* Espacio entre contenedores */
+        }
+        .event-item {
+            text-align: center;
+        }
+        .event-image {
+            max-width: 100%;
+            height: auto;
+        }
+        .event-text {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+
+        }
+
+
+        .event-container img {
+            width: 100%;
+            max-width: 300px; /* Ajusta el ancho máximo de la imagen */
+            border-radius: 10px;
+        }
+
+        .event-text {
+            color: #9A0808;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+            text-decoration: none; /* Quitar subrayado del enlace */
+        }
+        
+</style> 
+<header>
+    <h1>Contacto</h1>
+    <div class="form-container">
+        <h2>Formulario de Contacto</h2>
+        <form  action="process.php" method="POST" enctype="multipart/form-data">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" name="direccion" required>
+
+            <label for="ubicacion">Ubicación:</label>
+            <input type="text" id="ubicacion" name="ubicacion" required>
+
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+            <label for="archivo">Adjuntar Documento:</label>
+            <input type="file" id="archivo" name="archivo">
+
+            <button type="submit">Enviar Mensaje</button>
+        </form>
+        <hr>
+    <br><br>
+    <a href="index.html">Inicio</a>
+    </hr> 
+    <p>Puedes contactarnos a través de nuestro correo: <a href="mailto:www.cosmosevents.com">www.cosmosevents.com</a></p>
+
+    </div>
+    <footer>
+        <nav>
+            <a href="index.html">Principal</a>
+            <a href="nosotros.html">Acerca de</a>
+            <a href="eventos.html">Cotizar</a>
+            <a href="pagar.html">Pagos</a>
+        </nav>
+    </footer>
+</header>
+<hr>
+
+    
+</body>
+</html>
